@@ -1,48 +1,19 @@
-#include<iostream>
-#include<string>
+#include<iostream> 
+//#include<conio.h>
 using namespace std;
 
-class nhanvien {
-private:
-	string hoten;
-	int sonamcongtac;
-	string chucvu;
-public:
-	void set() {
-		cout << "\nNhap ho ten ";
-		getline(cin, this->hoten);
-		cout << "\nChucvu ";
-		getline(cin, this->chucvu);
-		do {
-			cout << "\nNhapsonamcongtac ";
-			cin >> this->sonamcongtac;
-			if (sonamcongtac < 0) {
-				cout << "Nhap lai";
-			}
-		} while (sonamcongtac<0);
+int main()
+{
+	int arr[5], i;
+	int *p = arr;
+	cout << "Nhap 5 so:";
+	cin >> *p >> *(p + 1) >> *(p + 2) >> *(p + 3) >> *(p + 4);
+	cout << "Cac so ban vua nhap la:\n";
+	//*p = arr[6];
+	for (i = 0; i < 6; i++)
+		cout << *(p+i) << endl;
 
-	}
-	void get() {
-		cout << "\n\nHo ten: " << this->hoten << endl;
-		cout << "\n\nSonamcongtac: " << this->sonamcongtac << endl;
-		cout << "\n\nChucvu: " << this->chucvu<<endl;
-	}
-	void tinh() {
-		float hesocv;
-		double hsct = sonamcongtac / 3;
-		cout << "\n\t\t\tHe so chuc vu \n";
-		cout << "\tNhanvien =1\nPhophong=1.2\nTruongphong=1.5\nPhogiamdoc=1.8\nGiamdoc=2\n";
-		cout << "Nhap he so chuc vu: ";
-		cin >> hesocv;
-		cout << "\nHe so cong tac\n :"<<hsct;
-		cout << "He so = " << hsct * hesocv;
-		
 
-	}
-};
-int main() {
-	nhanvien obj;
-	obj.set();
-	obj.get();
-	obj.tinh();
+	return 0;
+
 }
